@@ -1,28 +1,30 @@
 package com.testmax;
 
-public class GenIntMax {
+public class GenIntMax <T extends Comparable<T>> {
 
-	public static int findMax(int a, int b, int c) {
+	public T findMax(T a, T b, T c) {
 		System.out.println("The numbers are : " + a + ", " + b + ", " + c);
-		int max = a;
-
-		if (max < b) {
+		T max = a;
+		System.out.println(max.compareTo(b));
+		System.out.println(max.compareTo(c));
+		
+		if (max.compareTo(b) < 0) {
 			max = b;
 		}
-		if (max < c) {
+		if (max.compareTo(c) < 0) {
 			max = c;
 		}
 		return max;
 	}
 
-	public static float findMax(float a, float b, float c) {
+	public static Float findMax(Float a, Float b, Float c) {
 		System.out.println("The numbers are : " + a + ", " + b + ", " + c);
-		float max = a;
+		Float max = a;
 
-		if (max < b) {
+		if (max.compareTo(b) < 0) {
 			max = b;
 		}
-		if (max < c) {
+		if (max.compareTo(c) < 0) {
 			max = c;
 		}
 		return max;
@@ -39,15 +41,14 @@ public class GenIntMax {
 		}
 		return max;
 	}
-
-	
-	public  void main(String[] args) {
+	public void main(String[] args) {
 
 		int a = (int) (Math.random() * 1000);
 		int b = (int) (Math.random() * 1000);
 		int c = (int) (Math.random() * 1000);
 
-		System.out.println(findMax(a, b, c));
+		System.out.println(MaximumTest(a, b, c));
 	}
-	
+
+		
 }
